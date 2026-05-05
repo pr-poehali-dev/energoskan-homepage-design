@@ -56,7 +56,7 @@
 @layer utilities {
   /* Раздел-метка */
   .section-tag {
-    @apply inline-flex items-center gap-2 font-body text-[11px] font-700 tracking-[0.3em] uppercase text-en-teal;
+    @apply inline-flex items-center gap-2 font-body text-[11px] font-bold tracking-[0.3em] uppercase text-en-teal;
   }
   .section-tag::before {
     content: "";
@@ -105,22 +105,22 @@
 
   /* Кнопка — бирюзовая */
   .btn-teal {
-    @apply inline-flex items-center gap-2.5 px-7 py-3.5 bg-en-teal text-white font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:bg-en-teal-dark hover:shadow-[0_0_20px_rgba(10,191,191,0.4)];
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 bg-en-teal text-white font-body text-sm font-bold tracking-wider uppercase transition-all duration-200 hover:bg-en-teal-dark hover:shadow-[0_0_20px_rgba(10,191,191,0.4)];
   }
 
   /* Кнопка — оранжевая */
   .btn-orange {
-    @apply inline-flex items-center gap-2.5 px-7 py-3.5 bg-en-orange text-white font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:bg-en-orange-dark;
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 bg-en-orange text-white font-body text-sm font-bold tracking-wider uppercase transition-all duration-200 hover:bg-en-orange-dark;
   }
 
   /* Кнопка — обводка бирюзовая */
   .btn-outline-teal {
-    @apply inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-en-teal text-en-teal font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:bg-en-teal hover:text-white;
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-en-teal text-en-teal font-body text-sm font-bold tracking-wider uppercase transition-all duration-200 hover:bg-en-teal hover:text-white;
   }
 
   /* Кнопка — обводка белая (на тёмном) */
   .btn-outline-white {
-    @apply inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-white/40 text-white font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:border-en-teal hover:text-en-teal;
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-white/40 text-white font-body text-sm font-bold tracking-wider uppercase transition-all duration-200 hover:border-en-teal hover:text-en-teal;
   }
 
   /* Тёмная карточка */
@@ -148,7 +148,7 @@
 
   /* Nav link */
   .nav-lnk {
-    @apply relative font-body text-[13px] font-600 text-white/70 tracking-wide uppercase transition-colors duration-200 hover:text-en-teal;
+    @apply relative font-body text-[13px] font-semibold text-white/70 tracking-wide uppercase transition-colors duration-200 hover:text-en-teal;
   }
   .nav-lnk::after {
     content: "";
@@ -170,7 +170,7 @@
 
   /* Полоса энергии */
   .energy-line {
-    @apply absolute h-px bg-gradient-to-r from-transparent via-en-teal to-transparent opacity-60 animate-energy-pulse;
+    @apply absolute h-px bg-gradient-to-r from-transparent via-en-teal to-transparent opacity-60;
   }
 
   /* fade-up анимация через delay */

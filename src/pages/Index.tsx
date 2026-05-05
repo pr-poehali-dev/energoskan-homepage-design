@@ -159,7 +159,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   return (
     <div className={`border-b border-en-light-3 transition-colors ${open ? "border-en-teal/30" : ""}`}>
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-5 text-left gap-4 group">
-        <span className={`font-body text-[15px] font-600 transition-colors ${open ? "text-en-teal" : "text-en-text group-hover:text-en-teal"}`}>{q}</span>
+        <span className={`font-body text-[15px] font-semibold transition-colors ${open ? "text-en-teal" : "text-en-text group-hover:text-en-teal"}`}>{q}</span>
         <div className={`w-7 h-7 flex items-center justify-center border-2 shrink-0 transition-all ${open ? "border-en-teal bg-en-teal" : "border-en-light-3 group-hover:border-en-teal"}`}>
           <Icon name={open ? "Minus" : "Plus"} size={13} className={open ? "text-white" : "text-en-text-3 group-hover:text-en-teal"} />
         </div>
@@ -256,7 +256,7 @@ const Index = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+74950000000" className="font-body text-sm text-white/60 hover:text-en-teal transition-colors font-600">
+            <a href="tel:+74950000000" className="font-body text-sm text-white/60 hover:text-en-teal transition-colors font-semibold">
               +7 (495) 000-00-00
             </a>
             <button onClick={() => go("contact")} className="btn-teal text-xs py-2.5 px-5">
@@ -323,7 +323,7 @@ const Index = () => {
             {/* Верхний тег */}
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-0.5 bg-en-teal" />
-              <span className="font-body text-[11px] font-700 tracking-[0.35em] uppercase text-en-teal">Завод-производитель ЭТЛ</span>
+              <span className="font-body text-[11px] font-bold tracking-[0.35em] uppercase text-en-teal">Завод-производитель ЭТЛ</span>
             </div>
 
             {/* Заголовок — Bebas size */}
@@ -341,7 +341,7 @@ const Index = () => {
               <div className="h-0.5 w-8 bg-en-orange/50" />
             </div>
 
-            <p className="font-body text-[15px] text-white/60 max-w-lg leading-relaxed mb-10 font-400">
+            <p className="font-body text-[15px] text-white/60 max-w-lg leading-relaxed mb-10 font-normal">
               Производство и поставка мобильных электротехнических лабораторий.
               Испытательное, сервисное и диагностическое оборудование.
             </p>
@@ -372,7 +372,7 @@ const Index = () => {
                 { n:"24/7", l:"сервис" },
               ].map((s, i) => (
                 <div key={i} className="flex-1 min-w-[110px] py-5 flex flex-col items-center border-r border-white/8 last:border-none">
-                  <span className="font-body text-xl font-800 text-en-teal">{s.n}</span>
+                  <span className="font-body text-xl font-bold text-en-teal">{s.n}</span>
                   <span className="font-body text-[10px] text-white/40 uppercase tracking-widest mt-0.5">{s.l}</span>
                 </div>
               ))}
@@ -396,10 +396,10 @@ const Index = () => {
                 <div className="w-8 h-0.5 bg-en-teal" />
                 <span className="section-tag">О компании</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-800 text-en-dark mb-1 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-en-dark mb-1 leading-tight">
                 Energoskan — завод-производитель
               </h2>
-              <h2 className="text-3xl md:text-4xl font-800 mb-6 leading-tight" style={{ color:"#0ABFBF" }}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight" style={{ color:"#0ABFBF" }}>
                 электротехнических лабораторий
               </h2>
               <p className="font-body text-[15px] text-en-text-2 leading-relaxed mb-4">
@@ -415,7 +415,7 @@ const Index = () => {
               <div className="grid grid-cols-4 gap-5 mb-8 py-6 border-y-2 border-en-light-3">
                 {[{n:"500+",l:"проектов"},{n:"17",l:"патентов"},{n:"60+",l:"регионов"},{n:"24",l:"года"}].map(s => (
                   <div key={s.n}>
-                    <div className="font-body text-2xl font-800 text-en-teal">{s.n}</div>
+                    <div className="font-body text-2xl font-bold text-en-teal">{s.n}</div>
                     <div className="font-body text-xs text-en-text-3 mt-0.5">{s.l}</div>
                   </div>
                 ))}
@@ -444,7 +444,7 @@ const Index = () => {
                   <span className="w-2 h-2 rounded-full bg-en-teal animate-pulse" />
                   <div>
                     <div className="font-body text-[10px] text-white/40 uppercase tracking-wider">Производство</div>
-                    <div className="font-body text-sm text-white font-700">В работе · 3 заказа</div>
+                    <div className="font-body text-sm text-white font-bold">В работе · 3 заказа</div>
                   </div>
                 </div>
               </div>
@@ -460,7 +460,7 @@ const Index = () => {
         <div className="absolute inset-0 diag-bg" />
         <div ref={refs.start.ref} className="relative max-w-7xl mx-auto px-8">
           <div className={`mb-10 transition-all duration-700 ${refs.start.inView ? "opacity-100" : "opacity-0"}`}>
-            <h2 className="text-2xl md:text-3xl font-800 text-en-dark">С чего начать?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-en-dark">С чего начать?</h2>
             <div className="w-16 h-0.5 bg-en-teal mt-3" />
           </div>
           <div className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-4 transition-all duration-700 ${refs.start.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -480,11 +480,11 @@ const Index = () => {
                     <div className="w-11 h-11 flex items-center justify-center" style={{ background:"rgba(10,191,191,0.1)" }}>
                       <Icon name={item.icon as "Zap"} size={20} className="text-en-teal" />
                     </div>
-                    <span className="font-body text-4xl font-800 text-en-light-3">{item.num}</span>
+                    <span className="font-body text-4xl font-bold text-en-light-3">{item.num}</span>
                   </div>
-                  <h3 className="font-body text-base font-700 text-en-dark mb-2">{item.title}</h3>
+                  <h3 className="font-body text-base font-bold text-en-dark mb-2">{item.title}</h3>
                   <p className="font-body text-xs text-en-text-3 leading-relaxed mb-5">{item.desc}</p>
-                  <div className="flex items-center gap-1.5 font-body text-xs font-700 text-en-teal uppercase tracking-wider">
+                  <div className="flex items-center gap-1.5 font-body text-xs font-bold text-en-teal uppercase tracking-wider">
                     {item.cta} <Icon name="ArrowRight" size={12} />
                   </div>
                 </div>
@@ -505,17 +505,17 @@ const Index = () => {
                 <div className="w-8 h-0.5 bg-en-teal" />
                 <span className="section-tag">Каталог</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-800 text-en-dark">Каталог продукции</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-en-dark">Каталог продукции</h2>
             </div>
             <div className="flex gap-2 flex-wrap">
               {[{k:"all",l:"Все"},{k:"labs",l:"Лаборатории"},{k:"tr",l:"Трансформаторы"},{k:"cables",l:"Кабели"}].map(t => (
                 <button key={t.k} onClick={() => setActiveTab(t.k)}
-                  className={`px-4 py-1.5 font-body text-[11px] font-700 tracking-wider uppercase border-2 transition-all ${activeTab===t.k ? "border-en-teal bg-en-teal text-white" : "border-en-light-3 text-en-text-3 hover:border-en-teal hover:text-en-teal"}`}>
+                  className={`px-4 py-1.5 font-body text-[11px] font-bold tracking-wider uppercase border-2 transition-all ${activeTab===t.k ? "border-en-teal bg-en-teal text-white" : "border-en-light-3 text-en-text-3 hover:border-en-teal hover:text-en-teal"}`}>
                   {t.l}
                 </button>
               ))}
             </div>
-            <button onClick={() => go("contact")} className="flex items-center gap-1.5 font-body text-sm font-700 text-en-teal hover:underline">
+            <button onClick={() => go("contact")} className="flex items-center gap-1.5 font-body text-sm font-bold text-en-teal hover:underline">
               Весь каталог <Icon name="ArrowRight" size={14} />
             </button>
           </div>
@@ -530,19 +530,19 @@ const Index = () => {
                   <img src={item.img} alt={item.title} className="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-700" />
                   {/* Тег поверх фото */}
                   <div className="absolute top-4 left-4 bg-en-teal px-3 py-1.5">
-                    <span className="font-body text-[10px] font-700 text-white uppercase tracking-[0.2em]">{item.tag}</span>
+                    <span className="font-body text-[10px] font-bold text-white uppercase tracking-[0.2em]">{item.tag}</span>
                   </div>
                   {/* Диагональный оверлей на hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-en-teal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-body text-sm font-700 text-en-teal">{item.price}</span>
-                    <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity font-body text-xs text-en-teal font-700 uppercase tracking-wider">
+                    <span className="font-body text-sm font-bold text-en-teal">{item.price}</span>
+                    <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity font-body text-xs text-en-teal font-bold uppercase tracking-wider">
                       Подробнее <Icon name="ArrowRight" size={12} />
                     </div>
                   </div>
-                  <h3 className="font-body text-[17px] font-700 text-en-dark mb-1 leading-snug group-hover:text-en-teal transition-colors">{item.title}</h3>
+                  <h3 className="font-body text-[17px] font-bold text-en-dark mb-1 leading-snug group-hover:text-en-teal transition-colors">{item.title}</h3>
                   <p className="font-body text-sm text-en-text-3">{item.desc}</p>
                 </div>
                 {/* Угловые акценты */}
@@ -567,10 +567,10 @@ const Index = () => {
           <div className={`text-center mb-14 transition-all duration-700 ${refs.labs.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="flex justify-center items-center gap-3 mb-4">
               <div className="w-12 h-0.5 bg-en-teal/40" />
-              <span className="font-body text-[11px] font-700 tracking-[0.35em] uppercase text-en-teal">Лаборатории</span>
+              <span className="font-body text-[11px] font-bold tracking-[0.35em] uppercase text-en-teal">Лаборатории</span>
               <div className="w-12 h-0.5 bg-en-teal/40" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-800 text-white mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
               Выберите тип мобильной<br />
               <span style={{ color:"#0ABFBF" }}>электролаборатории</span>
             </h2>
@@ -590,9 +590,9 @@ const Index = () => {
                 <div className="w-14 h-14 flex items-center justify-center mb-6 border-2 border-en-teal/40 group-hover:border-white/50 transition-colors">
                   <Icon name={lab.icon as "Zap"} size={22} className="text-en-teal group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-body text-[18px] font-700 text-white mb-4 leading-snug">{lab.title}</h3>
+                <h3 className="font-body text-[18px] font-bold text-white mb-4 leading-snug">{lab.title}</h3>
                 <p className="font-body text-sm leading-relaxed mb-6 text-white/50 group-hover:text-white/80 transition-colors">{lab.desc}</p>
-                <div className="flex items-center gap-2 font-body text-xs font-700 text-en-teal group-hover:text-white transition-colors uppercase tracking-wider">
+                <div className="flex items-center gap-2 font-body text-xs font-bold text-en-teal group-hover:text-white transition-colors uppercase tracking-wider">
                   Подробнее <Icon name="ArrowRight" size={12} />
                 </div>
               </div>
@@ -618,7 +618,7 @@ const Index = () => {
             {["25+ лет опыта","Собственное производство","Склад в наличии","Гарантия 24 месяца","Сервис 24/7"].map((t,i) => (
               <div key={i} className="flex items-center gap-2.5">
                 <div className="w-1 h-1 bg-white/60 rounded-full" />
-                <span className="font-body text-[11px] text-white font-700 uppercase tracking-[0.2em]">{t}</span>
+                <span className="font-body text-[11px] text-white font-bold uppercase tracking-[0.2em]">{t}</span>
               </div>
             ))}
           </div>
@@ -637,7 +637,7 @@ const Index = () => {
               <span className="section-tag">Сервисы</span>
               <div className="w-8 h-0.5 bg-en-teal" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-800 text-en-dark">Разработка. Производство.<br />Обучение. Сервис.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-en-dark">Разработка. Производство.<br />Обучение. Сервис.</h2>
             <p className="font-body text-[15px] text-en-text-3 max-w-xl mx-auto mt-4">Полный цикл от технического задания до пусконаладки и обслуживания объекта.</p>
           </div>
 
@@ -651,7 +651,7 @@ const Index = () => {
                 <div className="w-11 h-11 flex items-center justify-center mb-5 transition-colors" style={{ background:"rgba(10,191,191,0.08)" }}>
                   <Icon name={s.icon as "Truck"} size={19} className="text-en-teal" />
                 </div>
-                <h3 className="font-body text-[15px] font-700 text-en-dark mb-2">{s.title}</h3>
+                <h3 className="font-body text-[15px] font-bold text-en-dark mb-2">{s.title}</h3>
                 <p className="font-body text-sm text-en-text-3 leading-relaxed">{s.desc}</p>
               </div>
             ))}
@@ -669,7 +669,7 @@ const Index = () => {
       <section id="clients" className="py-20 bg-white">
         <div ref={refs.clients.ref} className="max-w-7xl mx-auto px-8">
           <div className={`text-center mb-12 transition-all duration-700 ${refs.clients.inView ? "opacity-100" : "opacity-0"}`}>
-            <p className="font-body text-[11px] font-700 tracking-[0.3em] uppercase text-en-text-3">Нам доверяют ведущие компании России</p>
+            <p className="font-body text-[11px] font-bold tracking-[0.3em] uppercase text-en-text-3">Нам доверяют ведущие компании России</p>
             <div className="w-16 h-0.5 bg-en-teal mx-auto mt-3" />
           </div>
           <div className={`grid grid-cols-4 md:grid-cols-8 transition-all duration-700 ${refs.clients.inView ? "opacity-100" : "opacity-0"}`}
@@ -677,7 +677,7 @@ const Index = () => {
             {clients.map((c, i) => (
               <div key={i} className="flex items-center justify-center py-8 px-4 group cursor-pointer transition-all duration-300 hover:bg-en-teal"
                 style={{ borderRight: i < 7 ? "1px solid #E3E8EE" : "none" }}>
-                <span className="font-body text-sm font-700 text-en-text-3 group-hover:text-white transition-colors text-center">{c}</span>
+                <span className="font-body text-sm font-bold text-en-text-3 group-hover:text-white transition-colors text-center">{c}</span>
               </div>
             ))}
           </div>
@@ -697,7 +697,7 @@ const Index = () => {
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor="#0ABFBF"; (e.currentTarget as HTMLElement).style.background="rgba(10,191,191,0.04)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor="#E3E8EE"; (e.currentTarget as HTMLElement).style.background=""; }}>
                 <Icon name={s.icon as "Truck"} size={22} className="text-en-teal" />
-                <span className="font-body text-xs font-600 text-en-text-3 text-center group-hover:text-en-teal transition-colors">{s.label}</span>
+                <span className="font-body text-xs font-semibold text-en-text-3 text-center group-hover:text-en-teal transition-colors">{s.label}</span>
               </div>
             ))}
           </div>
@@ -714,11 +714,11 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-0.5 bg-en-teal" />
-                <span className="font-body text-[11px] font-700 tracking-[0.35em] uppercase text-en-teal">Портфолио</span>
+                <span className="font-body text-[11px] font-bold tracking-[0.35em] uppercase text-en-teal">Портфолио</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-800 text-white">Реализованные проекты</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Реализованные проекты</h2>
             </div>
-            <button className="hidden md:flex items-center gap-2 font-body text-sm font-700 text-en-teal hover:underline">
+            <button className="hidden md:flex items-center gap-2 font-body text-sm font-bold text-en-teal hover:underline">
               Все проекты <Icon name="ArrowRight" size={14} />
             </button>
           </div>
@@ -733,7 +733,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-en-dark via-en-dark/30 to-transparent" />
                 {/* Тег */}
                 <div className="absolute top-4 left-4 bg-en-teal px-2.5 py-1">
-                  <span className="font-body text-[9px] font-700 text-white uppercase tracking-[0.2em]">{p.tag}</span>
+                  <span className="font-body text-[9px] font-bold text-white uppercase tracking-[0.2em]">{p.tag}</span>
                 </div>
                 {/* Год */}
                 <div className="absolute top-4 right-4">
@@ -742,7 +742,7 @@ const Index = () => {
                 {/* Заголовок */}
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <div className="w-0 h-0.5 bg-en-teal group-hover:w-full transition-all duration-500 mb-3" />
-                  <h3 className="font-body text-sm font-700 text-white leading-snug">{p.title}</h3>
+                  <h3 className="font-body text-sm font-bold text-white leading-snug">{p.title}</h3>
                 </div>
               </div>
             ))}
@@ -762,7 +762,7 @@ const Index = () => {
               <span className="section-tag">Конкурентные преимущества</span>
               <div className="w-8 h-0.5 bg-en-teal" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-800 text-en-dark">
+            <h2 className="text-3xl md:text-4xl font-bold text-en-dark">
               Почему выбирают <span style={{ color:"#0ABFBF" }}>Energoskan</span>
             </h2>
           </div>
@@ -781,7 +781,7 @@ const Index = () => {
                       <div className="w-6 h-6 flex items-center justify-center shrink-0" style={{ background:"#0ABFBF" }}>
                         <Icon name="Check" size={13} className="text-white" />
                       </div>
-                      <span className="font-body text-[15px] font-600 text-en-dark">{w}</span>
+                      <span className="font-body text-[15px] font-semibold text-en-dark">{w}</span>
                     </div>
                   ))}
                 </div>
@@ -792,7 +792,7 @@ const Index = () => {
             <div className="relative overflow-hidden" style={{ border:"1px solid #E3E8EE", background:"#F5F7FA" }}>
               <div className="p-8">
                 <div className="mb-6 pb-4" style={{ borderBottom:"1px solid #E3E8EE" }}>
-                  <span className="font-body text-base font-700 text-en-text-3 uppercase tracking-wider">Конкуренты</span>
+                  <span className="font-body text-base font-bold text-en-text-3 uppercase tracking-wider">Конкуренты</span>
                 </div>
                 <div className="flex flex-col gap-4">
                   {whyThem.map((w, i) => (
@@ -816,7 +816,7 @@ const Index = () => {
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor="#0ABFBF"; (e.currentTarget as HTMLElement).style.background="rgba(10,191,191,0.04)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor="#E3E8EE"; (e.currentTarget as HTMLElement).style.background=""; }}>
                 <div className="absolute bottom-0 left-0 right-0 h-0 group-hover:h-0.5 bg-en-teal transition-all duration-300" />
-                <div className="font-body text-4xl font-800 text-en-teal mb-1">{s.num}</div>
+                <div className="font-body text-4xl font-bold text-en-teal mb-1">{s.num}</div>
                 <div className="font-body text-[11px] text-en-text-3 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
@@ -831,7 +831,7 @@ const Index = () => {
         <EnergyLines dark />
         <div ref={refs.mats.ref} className="relative z-10 max-w-7xl mx-auto px-8">
           <div className={`mb-10 transition-all duration-700 ${refs.mats.inView ? "opacity-100" : "opacity-0"}`}>
-            <h2 className="text-2xl md:text-3xl font-800 text-white">Материалы для специалистов</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Материалы для специалистов</h2>
             <div className="w-16 h-0.5 bg-en-teal mt-3" />
           </div>
           <div className={`grid md:grid-cols-2 gap-px transition-all duration-700 ${refs.mats.inView ? "opacity-100" : "opacity-0"}`}
@@ -847,9 +847,9 @@ const Index = () => {
                 <div className="w-12 h-12 flex items-center justify-center mb-6 border-2 border-en-teal/40 group-hover:border-white/50 transition-colors">
                   <Icon name={m.icon as "FileText"} size={20} className="text-en-teal group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-body text-xl font-700 text-white mb-3 leading-snug">{m.title}</h3>
+                <h3 className="font-body text-xl font-bold text-white mb-3 leading-snug">{m.title}</h3>
                 <p className="font-body text-sm text-white/50 group-hover:text-white/80 leading-relaxed mb-8 transition-colors">{m.desc}</p>
-                <button className="px-6 py-2.5 font-body text-xs font-700 uppercase tracking-wider border-2 border-white/30 text-white group-hover:border-white group-hover:bg-white group-hover:text-en-teal transition-all">
+                <button className="px-6 py-2.5 font-body text-xs font-bold uppercase tracking-wider border-2 border-white/30 text-white group-hover:border-white group-hover:bg-white group-hover:text-en-teal transition-all">
                   {m.cta}
                 </button>
               </div>
@@ -865,11 +865,11 @@ const Index = () => {
         <div className="absolute inset-0" style={{ backgroundImage:"repeating-linear-gradient(-55deg,transparent 0,transparent 18px,rgba(255,255,255,0.06) 18px,rgba(255,255,255,0.06) 19px)" }} />
         <div className="relative max-w-7xl mx-auto px-8">
           <div className="flex flex-wrap items-center justify-between gap-8">
-            <h3 className="font-body text-2xl font-800 text-white">Преимущества завода</h3>
+            <h3 className="font-body text-2xl font-bold text-white">Преимущества завода</h3>
             <div className="flex flex-wrap gap-10">
               {stats.map((s, i) => (
                 <div key={i} className="text-center">
-                  <div className="font-body text-3xl font-800 text-white">{s.num}</div>
+                  <div className="font-body text-3xl font-bold text-white">{s.num}</div>
                   <div className="font-body text-[10px] text-white/70 uppercase tracking-widest mt-0.5">{s.label}</div>
                 </div>
               ))}
@@ -890,7 +890,7 @@ const Index = () => {
                 <div className="w-8 h-0.5 bg-en-teal" />
                 <span className="section-tag">Калькулятор</span>
               </div>
-              <h2 className="text-3xl font-800 text-en-dark mb-4">
+              <h2 className="text-3xl font-bold text-en-dark mb-4">
                 Калькулятор стоимости<br />
                 <span style={{ color:"#0ABFBF" }}>ЭТЛ</span>
               </h2>
@@ -905,8 +905,8 @@ const Index = () => {
               <div className="p-8 flex flex-col gap-6">
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <label className="font-body text-xs font-700 text-en-text-3 uppercase tracking-wider">Мощность трансформатора</label>
-                    <span className="font-body text-base font-800 text-en-teal">{calcKva} кВА</span>
+                    <label className="font-body text-xs font-bold text-en-text-3 uppercase tracking-wider">Мощность трансформатора</label>
+                    <span className="font-body text-base font-bold text-en-teal">{calcKva} кВА</span>
                   </div>
                   <input type="range" min={25} max={2500} step={25} value={calcKva}
                     onChange={e => setCalcKva(+e.target.value)}
@@ -916,11 +916,11 @@ const Index = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="font-body text-xs font-700 text-en-text-3 uppercase tracking-wider mb-2 block">Класс напряжения</label>
+                  <label className="font-body text-xs font-bold text-en-text-3 uppercase tracking-wider mb-2 block">Класс напряжения</label>
                   <div className="flex gap-3">
                     {["6","10","35"].map(v => (
                       <button key={v} onClick={() => setCalcV(v)}
-                        className={`flex-1 py-3 font-body text-sm font-700 border-2 transition-all ${calcV===v ? "border-en-teal bg-en-teal text-white" : "border-en-light-3 text-en-text-3 hover:border-en-teal"}`}>
+                        className={`flex-1 py-3 font-body text-sm font-bold border-2 transition-all ${calcV===v ? "border-en-teal bg-en-teal text-white" : "border-en-light-3 text-en-text-3 hover:border-en-teal"}`}>
                         {v} кВ
                       </button>
                     ))}
@@ -928,8 +928,8 @@ const Index = () => {
                 </div>
                 <div className="pt-4" style={{ borderTop:"2px solid #F5F7FA" }}>
                   <div className="flex items-center justify-between mb-5">
-                    <span className="font-body text-sm font-600 text-en-text-2">Ориентировочно:</span>
-                    <span className="font-body text-2xl font-800 text-en-teal">от {calcPrice.toLocaleString("ru")} ₽</span>
+                    <span className="font-body text-sm font-semibold text-en-text-2">Ориентировочно:</span>
+                    <span className="font-body text-2xl font-bold text-en-teal">от {calcPrice.toLocaleString("ru")} ₽</span>
                   </div>
                   <button onClick={() => go("contact")} className="btn-teal w-full justify-center">
                     Получить точный расчёт
@@ -953,7 +953,7 @@ const Index = () => {
                 <div className="w-8 h-0.5 bg-en-teal" />
                 <span className="section-tag">FAQ</span>
               </div>
-              <h2 className="text-3xl font-800 text-en-dark mb-5">
+              <h2 className="text-3xl font-bold text-en-dark mb-5">
                 Часто задаваемые<br />
                 <span style={{ color:"#0ABFBF" }}>вопросы</span>
               </h2>
@@ -984,9 +984,9 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-0.5 bg-en-teal" />
-                <span className="font-body text-[11px] font-700 tracking-[0.35em] uppercase text-en-teal">Контакты</span>
+                <span className="font-body text-[11px] font-bold tracking-[0.35em] uppercase text-en-teal">Контакты</span>
               </div>
-              <h2 className="text-4xl font-800 text-white mb-3">
+              <h2 className="text-4xl font-bold text-white mb-3">
                 Подберём решение<br />
                 <span style={{ color:"#0ABFBF" }}>под вашу задачу</span>
               </h2>
@@ -1006,7 +1006,7 @@ const Index = () => {
                       <Icon name={c.icon as "Phone"} size={14} className="text-en-teal" />
                     </div>
                     <div>
-                      <div className="font-body text-[15px] font-700 text-white">{c.label}</div>
+                      <div className="font-body text-[15px] font-bold text-white">{c.label}</div>
                       <div className="font-body text-xs text-white/40 mt-0.5">{c.sub}</div>
                     </div>
                   </div>
@@ -1019,7 +1019,7 @@ const Index = () => {
               <TealCorner pos="tr" />
               <TealCorner pos="bl" />
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-en-teal to-en-orange" />
-              <h3 className="font-body text-xl font-800 text-en-dark mb-6">Запрос коммерческого предложения</h3>
+              <h3 className="font-body text-xl font-bold text-en-dark mb-6">Запрос коммерческого предложения</h3>
               <div className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   {["Имя","Компания"].map(p => (
@@ -1076,9 +1076,9 @@ const Index = () => {
                 <div className="w-8 h-0.5 bg-en-teal" />
                 <span className="section-tag">Медиа</span>
               </div>
-              <h2 className="text-3xl font-800 text-en-dark">Новости и экспертиза</h2>
+              <h2 className="text-3xl font-bold text-en-dark">Новости и экспертиза</h2>
             </div>
-            <button className="hidden md:flex items-center gap-2 font-body text-sm font-700 text-en-teal hover:underline">
+            <button className="hidden md:flex items-center gap-2 font-body text-sm font-bold text-en-teal hover:underline">
               Все материалы <Icon name="ArrowRight" size={14} />
             </button>
           </div>
@@ -1091,12 +1091,12 @@ const Index = () => {
                 <div className="w-full h-1 bg-en-light-3 group-hover:bg-en-teal transition-colors duration-300" />
                 <div className="p-7">
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="font-body text-[9px] font-700 uppercase tracking-[0.25em] px-3 py-1.5 text-white" style={{ background:"#0ABFBF" }}>{n.tag}</span>
+                    <span className="font-body text-[9px] font-bold uppercase tracking-[0.25em] px-3 py-1.5 text-white" style={{ background:"#0ABFBF" }}>{n.tag}</span>
                     <span className="font-body text-xs text-en-text-3">{n.date}</span>
                   </div>
-                  <h3 className="font-body text-[17px] font-700 text-en-dark mb-3 leading-snug group-hover:text-en-teal transition-colors">{n.title}</h3>
+                  <h3 className="font-body text-[17px] font-bold text-en-dark mb-3 leading-snug group-hover:text-en-teal transition-colors">{n.title}</h3>
                   <p className="font-body text-sm text-en-text-3 leading-relaxed mb-6">{n.desc}</p>
-                  <div className="flex items-center gap-1.5 font-body text-xs font-700 text-en-teal uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-1.5 font-body text-xs font-bold text-en-teal uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
                     Читать <Icon name="ArrowRight" size={12} />
                   </div>
                 </div>
@@ -1136,7 +1136,7 @@ const Index = () => {
               { title:"Контакты",  links:["+7 (495) 000-00-00","info@energoskan.ru","Москва, ул. Промышленная, 12","Пн–Пт 9:00–18:00"] },
             ].map((col, i) => (
               <div key={i}>
-                <h4 className="font-body text-[10px] font-700 tracking-[0.25em] uppercase text-white/60 mb-5">{col.title}</h4>
+                <h4 className="font-body text-[10px] font-bold tracking-[0.25em] uppercase text-white/60 mb-5">{col.title}</h4>
                 <div className="flex flex-col gap-3">
                   {col.links.map(l => (
                     <span key={l} className="font-body text-xs text-white/35 hover:text-en-teal cursor-pointer transition-colors">{l}</span>
