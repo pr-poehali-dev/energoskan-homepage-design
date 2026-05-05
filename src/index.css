@@ -5,43 +5,33 @@
 @layer base {
   :root {
     --background: 210 20% 97%;
-    --foreground: 218 45% 18%;
-
+    --foreground: 214 35% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 218 45% 18%;
-
+    --card-foreground: 214 35% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 218 45% 18%;
-
-    --primary: 22 89% 54%;
+    --popover-foreground: 214 35% 16%;
+    --primary: 180 90% 39%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 218 45% 18%;
+    --secondary: 214 35% 16%;
     --secondary-foreground: 0 0% 100%;
-
-    --muted: 210 15% 93%;
-    --muted-foreground: 215 15% 50%;
-
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 48%;
     --accent: 22 89% 54%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 210 15% 87%;
-    --input: 210 15% 87%;
-    --ring: 22 89% 54%;
-
-    --radius: 0.25rem;
-
-    --sidebar-background: 218 45% 15%;
+    --border: 210 14% 86%;
+    --input: 210 14% 86%;
+    --ring: 180 90% 39%;
+    --radius: 0px;
+    --sidebar-background: 214 40% 11%;
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 22 89% 54%;
+    --sidebar-primary: 180 90% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 218 30% 22%;
+    --sidebar-accent: 214 30% 18%;
     --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 218 30% 22%;
-    --sidebar-ring: 22 89% 54%;
+    --sidebar-border: 214 30% 18%;
+    --sidebar-ring: 180 90% 39%;
   }
 }
 
@@ -49,69 +39,152 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-white text-es-dark font-body;
+    @apply bg-en-light text-en-text font-body;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-
   h1,
   h2,
   h3,
-  h4,
-  h5 {
-    @apply font-display;
+  h4 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
   }
 }
 
+/* ─── DESIGN SYSTEM UTILITIES ─── */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Раздел-метка */
+  .section-tag {
+    @apply inline-flex items-center gap-2 font-body text-[11px] font-700 tracking-[0.3em] uppercase text-en-teal;
   }
-
-  /* Section label — оранжевый текст над заголовком */
-  .section-label {
-    @apply font-body text-xs tracking-[0.25em] uppercase text-es-orange font-bold;
-  }
-
-  /* Nav link — белый текст с оранжевым hover */
-  .nav-link {
-    @apply relative font-body text-sm text-white/80 transition-colors duration-200 hover:text-white;
-  }
-
-  .nav-link::after {
+  .section-tag::before {
     content: "";
-    @apply absolute -bottom-0.5 left-0 w-0 h-0.5 bg-es-orange transition-all duration-200;
+    @apply block w-6 h-0.5 bg-en-teal;
   }
 
-  .nav-link:hover::after {
+  /* Диагональная полоса-подложка */
+  .diag-bg {
+    background-image: repeating-linear-gradient(
+      -55deg,
+      transparent 0px,
+      transparent 18px,
+      rgba(10, 191, 191, 0.04) 18px,
+      rgba(10, 191, 191, 0.04) 19px
+    );
+  }
+
+  /* Инженерная сетка */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(10, 191, 191, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 191, 191, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Диагональный срез секции */
+  .clip-diag-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+  .clip-diag-top {
+    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+  }
+  .clip-diag-both {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  }
+
+  /* Бирюзовая линия-акцент */
+  .teal-line {
+    @apply block w-10 h-0.5 bg-en-teal;
+  }
+
+  /* Оранжевая линия */
+  .orange-line {
+    @apply block w-10 h-0.5 bg-en-orange;
+  }
+
+  /* Кнопка — бирюзовая */
+  .btn-teal {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 bg-en-teal text-white font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:bg-en-teal-dark hover:shadow-[0_0_20px_rgba(10,191,191,0.4)];
+  }
+
+  /* Кнопка — оранжевая */
+  .btn-orange {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 bg-en-orange text-white font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:bg-en-orange-dark;
+  }
+
+  /* Кнопка — обводка бирюзовая */
+  .btn-outline-teal {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-en-teal text-en-teal font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:bg-en-teal hover:text-white;
+  }
+
+  /* Кнопка — обводка белая (на тёмном) */
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-white/40 text-white font-body text-sm font-700 tracking-wider uppercase transition-all duration-200 hover:border-en-teal hover:text-en-teal;
+  }
+
+  /* Тёмная карточка */
+  .card-dark {
+    @apply bg-en-dark-2 border border-white/5 transition-all duration-300;
+  }
+  .card-dark:hover {
+    @apply border-en-teal/40 shadow-[0_4px_30px_rgba(10,191,191,0.08)];
+  }
+
+  /* Светлая карточка */
+  .card-light {
+    @apply bg-white border border-en-light-3 transition-all duration-300;
+  }
+  .card-light:hover {
+    @apply border-en-teal shadow-[0_4px_24px_rgba(10,191,191,0.12)] -translate-y-0.5;
+  }
+
+  /* Бирюзовое свечение */
+  .teal-glow {
+    box-shadow:
+      0 0 40px rgba(10, 191, 191, 0.2),
+      0 0 80px rgba(10, 191, 191, 0.08);
+  }
+
+  /* Nav link */
+  .nav-lnk {
+    @apply relative font-body text-[13px] font-600 text-white/70 tracking-wide uppercase transition-colors duration-200 hover:text-en-teal;
+  }
+  .nav-lnk::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 w-0 h-0.5 bg-en-teal transition-all duration-200;
+  }
+  .nav-lnk:hover::after {
     @apply w-full;
   }
 
-  /* Btn primary — оранжевая кнопка */
-  .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-es-orange text-white font-body text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:bg-es-orange-dark;
+  /* Угловые акценты */
+  .corner-tl::before {
+    content: "";
+    @apply absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-en-teal pointer-events-none;
+  }
+  .corner-br::after {
+    content: "";
+    @apply absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-en-teal pointer-events-none;
   }
 
-  /* Btn outline — обводка оранжевая */
-  .btn-outline {
-    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-es-orange text-es-orange font-body text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:bg-es-orange hover:text-white;
+  /* Полоса энергии */
+  .energy-line {
+    @apply absolute h-px bg-gradient-to-r from-transparent via-en-teal to-transparent opacity-60 animate-energy-pulse;
   }
 
-  /* Btn outline white — обводка белая (на тёмном фоне) */
-  .btn-outline-white {
-    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-body text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:bg-white hover:text-es-navy;
+  /* fade-up анимация через delay */
+  .fade-up-1 {
+    animation: fade-up 0.6s ease-out 0.1s both;
   }
-
-  /* Card hover */
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  .fade-up-2 {
+    animation: fade-up 0.6s ease-out 0.2s both;
   }
-
-  /* Orange line accent */
-  .orange-line {
-    @apply block w-12 h-1 bg-es-orange mb-4;
+  .fade-up-3 {
+    animation: fade-up 0.6s ease-out 0.3s both;
+  }
+  .fade-up-4 {
+    animation: fade-up 0.6s ease-out 0.4s both;
   }
 }
 
@@ -119,40 +192,29 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4f6f8;
+  background: #0e1620;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f26522;
+  background: #0abfbf;
   border-radius: 2px;
 }
 
-/* Selection */
 ::selection {
-  background: rgba(242, 101, 34, 0.2);
-  color: #1b2a47;
+  background: rgba(10, 191, 191, 0.25);
+  color: #1a2535;
 }
 
-/* Orange diagonal stripe background pattern */
-.stripe-pattern {
-  background-image: repeating-linear-gradient(
-    135deg,
-    transparent,
-    transparent 10px,
-    rgba(242, 101, 34, 0.06) 10px,
-    rgba(242, 101, 34, 0.06) 20px
-  );
+/* Энергетические линии SVG-анимация */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -100;
+  }
 }
-
-/* Gradient orange-to-navy (brand) */
-.gradient-brand {
-  background: linear-gradient(135deg, #f26522 0%, #1b2a47 100%);
-}
-
-.gradient-navy {
-  background: linear-gradient(180deg, #1b2a47 0%, #0f1c30 100%);
+.energy-dash {
+  stroke-dasharray: 8 6;
+  animation: dash-flow 2s linear infinite;
 }
