@@ -4,44 +4,44 @@
 
 @layer base {
   :root {
-    --background: 220 30% 97%;
-    --foreground: 220 40% 8%;
+    --background: 210 20% 97%;
+    --foreground: 218 45% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 40% 8%;
+    --card-foreground: 218 45% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 40% 8%;
+    --popover-foreground: 218 45% 18%;
 
-    --primary: 38 54% 54%;
-    --primary-foreground: 220 40% 8%;
+    --primary: 22 89% 54%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 40% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 218 45% 18%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 20% 92%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 15% 50%;
 
-    --accent: 38 54% 54%;
-    --accent-foreground: 220 40% 8%;
+    --accent: 22 89% 54%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 38 54% 54%;
+    --border: 210 15% 87%;
+    --input: 210 15% 87%;
+    --ring: 22 89% 54%;
 
     --radius: 0.25rem;
 
-    --sidebar-background: 220 30% 10%;
+    --sidebar-background: 218 45% 15%;
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 38 54% 54%;
-    --sidebar-primary-foreground: 220 40% 8%;
-    --sidebar-accent: 220 20% 20%;
+    --sidebar-primary: 22 89% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 218 30% 22%;
     --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 220 20% 20%;
-    --sidebar-ring: 38 54% 54%;
+    --sidebar-border: 218 30% 22%;
+    --sidebar-ring: 22 89% 54%;
   }
 }
 
@@ -51,7 +51,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-white text-es-dark font-body;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -59,7 +59,8 @@
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5 {
     @apply font-display;
   }
 }
@@ -69,53 +70,48 @@
     text-wrap: balance;
   }
 
-  .animate-delay-100 {
-    animation-delay: 0.1s;
-  }
-  .animate-delay-200 {
-    animation-delay: 0.2s;
-  }
-  .animate-delay-300 {
-    animation-delay: 0.3s;
-  }
-  .animate-delay-400 {
-    animation-delay: 0.4s;
-  }
-  .animate-delay-500 {
-    animation-delay: 0.5s;
-  }
-  .animate-delay-700 {
-    animation-delay: 0.7s;
-  }
-  .animate-delay-900 {
-    animation-delay: 0.9s;
-  }
-
-  .opacity-0-init {
-    opacity: 0;
-  }
-
-  .gold-line {
-    @apply block h-px bg-es-gold;
-    animation: line-grow 1.2s ease-out 0.5s forwards;
-    width: 0%;
-  }
-
+  /* Section label — оранжевый текст над заголовком */
   .section-label {
-    @apply font-body text-xs tracking-[0.3em] uppercase text-es-gold font-medium;
+    @apply font-body text-xs tracking-[0.25em] uppercase text-es-orange font-bold;
   }
 
+  /* Nav link — белый текст с оранжевым hover */
   .nav-link {
-    @apply relative font-body text-sm tracking-widest uppercase text-es-platinum transition-colors duration-300 hover:text-white;
+    @apply relative font-body text-sm text-white/80 transition-colors duration-200 hover:text-white;
   }
 
   .nav-link::after {
     content: "";
-    @apply absolute -bottom-1 left-0 w-0 h-px bg-es-gold transition-all duration-300;
+    @apply absolute -bottom-0.5 left-0 w-0 h-0.5 bg-es-orange transition-all duration-200;
   }
 
   .nav-link:hover::after {
     @apply w-full;
+  }
+
+  /* Btn primary — оранжевая кнопка */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-es-orange text-white font-body text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:bg-es-orange-dark;
+  }
+
+  /* Btn outline — обводка оранжевая */
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-es-orange text-es-orange font-body text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:bg-es-orange hover:text-white;
+  }
+
+  /* Btn outline white — обводка белая (на тёмном фоне) */
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-body text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:bg-white hover:text-es-navy;
+  }
+
+  /* Card hover */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  /* Orange line accent */
+  .orange-line {
+    @apply block w-12 h-1 bg-es-orange mb-4;
   }
 }
 
@@ -123,18 +119,40 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a1628;
+  background: #f4f6f8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a84c;
+  background: #f26522;
   border-radius: 2px;
 }
 
+/* Selection */
 ::selection {
-  background: rgba(201, 168, 76, 0.3);
-  color: #fafbfc;
+  background: rgba(242, 101, 34, 0.2);
+  color: #1b2a47;
+}
+
+/* Orange diagonal stripe background pattern */
+.stripe-pattern {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent,
+    transparent 10px,
+    rgba(242, 101, 34, 0.06) 10px,
+    rgba(242, 101, 34, 0.06) 20px
+  );
+}
+
+/* Gradient orange-to-navy (brand) */
+.gradient-brand {
+  background: linear-gradient(135deg, #f26522 0%, #1b2a47 100%);
+}
+
+.gradient-navy {
+  background: linear-gradient(180deg, #1b2a47 0%, #0f1c30 100%);
 }

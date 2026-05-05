@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				display: ['Cormorant', 'serif'],
-				body: ['Golos Text', 'sans-serif'],
+				display: ['PT Sans Narrow', 'PT Sans', 'sans-serif'],
+				body: ['PT Sans', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -67,15 +67,27 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// Energoskan brand colors (from guideline)
 				es: {
-					navy: '#0A1628',
-					steel: '#1A2B4A',
-					blue: '#1E3A5F',
-					gold: '#C9A84C',
-					'gold-light': '#E8C97A',
-					platinum: '#8B9EB7',
-					light: '#F4F6F9',
-					white: '#FAFBFC',
+					// Primary orange
+					orange: '#F26522',
+					'orange-dark': '#D4541A',
+					'orange-light': '#FF8A4A',
+					// Primary dark blue
+					navy: '#1B2A47',
+					'navy-dark': '#0F1C30',
+					'navy-mid': '#243554',
+					// Secondary blue (gradient)
+					blue: '#1E5FA8',
+					'blue-light': '#2E7BC4',
+					// Neutral
+					gray: '#6B7A8D',
+					'gray-light': '#B8C2CC',
+					'gray-pale': '#E8ECF0',
+					'gray-bg': '#F4F6F8',
+					white: '#FFFFFF',
+					// Dark text
+					dark: '#1B2A47',
 				}
 			},
 			borderRadius: {
@@ -93,24 +105,19 @@ export default {
 					to: { height: '0' }
 				},
 				'fade-up': {
-					from: { opacity: '0', transform: 'translateY(40px)' },
+					from: { opacity: '0', transform: 'translateY(30px)' },
 					to: { opacity: '1', transform: 'translateY(0)' }
 				},
 				'fade-in': {
 					from: { opacity: '0' },
 					to: { opacity: '1' }
 				},
-				'line-grow': {
-					from: { width: '0%' },
-					to: { width: '100%' }
-				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-up': 'fade-up 0.8s ease-out forwards',
-				'fade-in': 'fade-in 1s ease-out forwards',
-				'line-grow': 'line-grow 1.2s ease-out forwards',
+				'fade-up': 'fade-up 0.6s ease-out forwards',
+				'fade-in': 'fade-in 0.6s ease-out forwards',
 			}
 		}
 	},
